@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manga_site_id: 
+  title: MyString
+  url: MyString
+
+two:
+  manga_site_id: 
+  title: MyString
+  url: MyString
