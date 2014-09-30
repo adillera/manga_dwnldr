@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'mangas#index'
+  resources :mangas do
+    get '/download', to: 'mangas#download', as: 'download'
+  end
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

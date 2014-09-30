@@ -1,0 +1,26 @@
+%h1
+  Mangas
+
+%ul
+  %li
+    %a{ href: new_manga_path }
+      Add New Manga
+
+- @manga_sites.each do |manga_site|
+  %div{ class: 'manga-site-listing' }
+    %h3
+      = manga_site.name
+    %ul
+      - manga_site.mangas.order(:title).each do |manga|
+        %li
+          %a{ href: manga_path(id: manga.id) }
+            = manga.title
+          %ul{ class: 'manga-actions' }
+            %li
+              %a{ href: edit_manga_path(id: manga.id) }
+                Edit
+            %li{ class: 'action-divider' }
+              |
+            %li
+              %a{ href: manga_path(id: manga.id), 'data-method' => 'delete' }
+                Delete

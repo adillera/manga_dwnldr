@@ -1,0 +1,9 @@
+%h1
+  = @manga.title
+
+%ul
+  - @chapters.each do |chapter|
+    %li
+      = chapter[:text]
+      %a{ href: "#{ manga_download_path(manga_id: @manga.id, format: 'pdf') }?chapter_href=#{ chapter[:href] }&chapter_text=#{ chapter[:text] }" }
+        Download

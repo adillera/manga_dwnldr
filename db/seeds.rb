@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+####################
+# SEED MANGA SITES #
+####################
+MangaSite.create([{ name: 'Manga Reader', url: 'http://www.mangareader.net' }])

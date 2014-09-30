@@ -1,0 +1,8 @@
+%h1
+  Add New Manga
+
+= form_for @manga do |f|
+  = collection_select(:manga, :manga_site_id, @manga_sites, :id, :name)
+  = f.text_field :title, placeholder: 'Title'
+  = f.text_field :url, placeholder: 'URL'
+  = f.submit 'Add Manga'
