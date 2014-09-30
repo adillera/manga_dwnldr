@@ -11,7 +11,7 @@
     %h3
       = manga_site.name
     %ul
-      - manga_site.mangas.each do |manga|
+      - manga_site.mangas.order(:title).each do |manga|
         %li
           %a{ href: manga_path(id: manga.id) }
             = manga.title

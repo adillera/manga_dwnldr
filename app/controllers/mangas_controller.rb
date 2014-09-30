@@ -1,6 +1,6 @@
 class MangasController < ApplicationController
   def index
-    @manga_sites = MangaSite.all
+    @manga_sites = MangaSite.order(:name)
   end
 
 
@@ -11,7 +11,7 @@ class MangasController < ApplicationController
 
 
   def new
-    @manga_sites = MangaSite.all
+    @manga_sites = MangaSite.order(:name)
     @manga = Manga.new(params[:manga])
   end
 

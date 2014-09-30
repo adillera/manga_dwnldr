@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140930031519) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "manga_sites", force: true do |t|
     t.string   "name"
     t.string   "url"
@@ -28,6 +31,6 @@ ActiveRecord::Schema.define(version: 20140930031519) do
     t.datetime "updated_at"
   end
 
-  add_index "mangas", ["manga_site_id"], name: "index_mangas_on_manga_site_id"
+  add_index "mangas", ["manga_site_id"], name: "index_mangas_on_manga_site_id", using: :btree
 
 end

@@ -28,11 +28,11 @@ class Manga < ActiveRecord::Base
     url = "#{ self.manga_site.url }#{ chapter_href }"
     page = Nokogiri::HTML(open(url))
     page_count = page.css('#pageMenu option').last.text.to_i
-    pdf = Prawn::Document.new
+    pdf = Prawn::Document.new(page_size: 'A4')
 
 
     pdf.image open(page.css('#imgholder a img').first['src']),
-      fit: [540, 720],
+      fit: [480, 672],
       position: :center,
       vposition: :center
 
@@ -53,7 +53,7 @@ class Manga < ActiveRecord::Base
 
 
       pdf.image open(page.css('#imgholder a img').first['src']),
-        fit: [540, 720],
+        fit: [480, 672],
         position: :center,
         vposition: :center
     end
